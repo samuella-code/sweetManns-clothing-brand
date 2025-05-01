@@ -1,11 +1,15 @@
-import React from 'react'
+import React from "react";
+import AppLayout from "../components/layout/app";
 
 function Accessories() {
   return (
-    <div>Accessories
-    <p>my love</p>
-    </div>
-  )
+    <AppLayout>
+      <div>
+        Accessories
+        <p>my love</p>
+      </div>
+    </AppLayout>
+  );
 }
 
-export default Accessories
+export default Accessories;

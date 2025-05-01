@@ -1,67 +1,129 @@
-import React from 'react'
-import Navbar from './components/Navbar/Navbar'
-import {createBrowserRouter, RouterProvider} from "react-router-dom"
-import Home from './Pages/Home'
-import Mens from './Pages/Mens'
-import Womens from './Pages/Womens'
-import Kids from './Pages/Kids'
-import Login from './Pages/Login'
-import Accessories from './Pages/Accessories'
-import hats from './Pages/hats'
-import womwen2 from './Pages/womwen2'
-import Cart from './Pages/Cart'
-import Footer from './components/Footer'
-import SingleProduct from './components/SingleProduct'
+import React from "react";
+import Navbar from "./components/Navbar/Navbar";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Pages/Home";
+import Mens from "./Pages/Mens";
+import Womens from "./Pages/Womens";
+import Kids from "./Pages/Kids";
+import Login from "./Pages/Login";
+import Accessories from "./Pages/Accessories";
+import Hats from "./Pages/hats";
+import Womwen2 from "./Pages/womwen2";
+import Cart from "./Pages/Cart";
+import Footer from "./components/Footer";
+import SingleProduct from "./components/SingleProduct";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <><Navbar/><Home/><Footer/></>
+    element: (
+      <>
+     
+        <Home />
+  
+      </>
+    ),
   },
   {
     path: "/mens",
-    element: <><Navbar/><Mens/><Footer/></>
+    element: (
+      <>
+     
+        <Mens />
+  
+      </>
+    ),
   },
   {
     path: "/womens",
-    element: <><Navbar/><Womens/><Footer/></>
+    element: (
+      <>
+     
+        <Womens />
+  
+      </>
+    ),
   },
   {
     path: "/kids",
-    element: <><Navbar/><Kids/><Footer/></>
+    element: (
+      <>
+     
+        <Kids />
+  
+      </>
+    ),
   },
   {
     path: "/Accessories",
-    element: <><Navbar/><Accessories/><Footer/></>
+    element: (
+      <>
+     
+        <Accessories />
+  
+      </>
+    ),
   },
   {
     path: "/womwen2",
-    element: <><Navbar/><womwen2/><Footer/></>
+    element: (
+      <>
+     
+        <Womwen2 />
+  
+      </>
+    ),
   },
   {
     path: "/hats",
-    element: <><Navbar/><hats/><Footer/></>
+    element: (
+      <>
+     
+        <Hats />
+  
+      </>
+    ),
   },
   {
     path: "/login",
-    element: <><Navbar/><Login/><Footer/></>
+    element: (
+      <>
+     
+        <Login />
+  
+      </>
+    ),
   },
   {
     path: "/cart",
-    element: <><Navbar/><Cart/><Footer/></>
+    element: (
+      <>
+     
+        <Cart />
+  
+      </>
+    ),
   },
   {
     path: "/products/:productId",
-    element: <><Navbar/><SingleProduct/><Footer/></>
-  }
-])
+    element: (
+      <>
+     
+        <SingleProduct />
+  
+      </>
+    ),
+  },
+]);
 
 const App = () => {
   return (
     <>
-     <RouterProvider router={router}/>
+      {/* <Navbar /> */}
+      <RouterProvider router={router} />
+      {/* <Footer /> */}
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
