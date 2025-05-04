@@ -3,6 +3,7 @@ import { Shopcontext } from '../Context/ShopContext'
 import EmptyCart from '../assets/EmptyCart.png'
 import { X } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import AppLayout from '../components/layout/app'
 
 const Cart = () => {
 
@@ -13,6 +14,7 @@ const Cart = () => {
   }, [])
 
   return (
+    <AppLayout>
     <div className='mt-32'>
       <div className='max-w-7xl mx-auto my-10 p-4'>
         {getTotalCartItems() === 0 ? (
@@ -83,6 +85,7 @@ const Cart = () => {
         )}
       </div>
     </div>
+    </AppLayout>
   )
 }
 

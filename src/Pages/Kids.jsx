@@ -31,12 +31,14 @@ import React, { useContext } from 'react'
 import { Shopcontext } from '../Context/ShopContext'
 import Item from '../components/Item'
 import banner from '../assets/rrr2.jpg' // Import the image
+import AppLayout from '../components/layout/app'
 
 const Kids = () => {
   const { all_product } = useContext(Shopcontext)
   const kidProducts = all_product.filter((product) => product.category === "kid")
 
   return (
+    <AppLayout>
     <div className='md:mt-32 mt-20 max-w-8xl mx-auto'>
      
       <div className="w-screen h-[300px] md:h-[400px] overflow-hidden rounded-b-[50px] shadow-lg">
@@ -61,6 +63,7 @@ const Kids = () => {
         </div>
       </div>
     </div>
+    </AppLayout>
   )
 }
 
