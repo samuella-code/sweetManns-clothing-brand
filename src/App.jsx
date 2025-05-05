@@ -6,6 +6,7 @@ import Mens from "./Pages/Mens";
 import Womens from "./Pages/Womens";
 import Kids from "./Pages/Kids";
 import Login from "./Pages/Login";
+import Signup from "./Pages/Signup";
 import Accessories from "./Pages/Accessories";
 import Hats from "./Pages/hats";
 import Womwen2 from "./Pages/womwen2";
@@ -90,6 +91,16 @@ const router = createBrowserRouter([
       <>
      
         <Login />
+  
+      </>
+    ),
+  },
+  {
+    path: "/signup",
+    element: (
+      <>
+     
+        <Signup />
   
       </>
     ),
