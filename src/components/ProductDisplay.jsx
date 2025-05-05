@@ -44,6 +44,7 @@ const ProductDisplay = (props) => {
         <div>
           <h1 className='font-semibold text-gray-400 text-2xl mt-4'>Select Size</h1>
           <div className='flex gap-4 items-center my-4'>
+            
             <div className='border bg-gray-100 p-4'>S</div>
             <div className='border bg-gray-100 p-4'>M</div>
             <div className='border bg-gray-100 p-4'>L</div>
