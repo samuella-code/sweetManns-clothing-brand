@@ -1,54 +1,148 @@
-import React, { useContext, useState } from 'react'
-import Logo from '../../assets/Logo1.png'
-import { ShoppingCart } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useState } from "react";
+import Logo from "../../assets/Logo1.png";
+import { ShoppingCart } from "lucide-react";
+import { Link } from "react-router-dom";
 import { HiMenuAlt1, HiMenuAlt3 } from "react-icons/hi";
-import ResponsiveMenu from './ResponsiveMenu';
-import { Shopcontext } from '../../Context/ShopContext';
+import ResponsiveMenu from "./ResponsiveMenu";
+import { Shopcontext } from "../../Context/ShopContext";
+import { FaUserCircle } from "react-icons/fa";
+import useCart from "../../hook/useCart";
+import Sidebar from "../sidebar";
 
 const Navbar = () => {
-  const [showMenu, setShowMenu] = useState(false)
-
-  const {getTotalCartItems} = useContext(Shopcontext)
+  const { cartCount } = useCart();
+  const [showMenu, setShowMenu] = useState(false);
+  // const { getTotalCartItems } = useContext(Shopcontext);
 
   const toggleMenu = () => {
-    setShowMenu(!showMenu)   //it will toggle if the showmenu is false it will be true and if true it will be false
-  }
+    setShowMenu(!showMenu);
+  };
   return (
-    <div className='bg-white px-4 fixed w-full z-50 shadow-sm top-0 shadow-gray-400'>
-      <div className='max-w-7xl mx-auto py-2 px-5 flex justify-between items-center'>
-        <Link to='/'> <img src={Logo} alt="" className='md:w-24 w-20'/></Link>
-       
-        <div className='flex items-center gap-5'>
-            <nav className='hidden md:block'>
-                <ul className='flex items-center font-semibold text-xl gap-7'>
-                    <Link to='/'><li>Home</li></Link>
-                    <Link to='/mens'><li>Men</li></Link>
-                    <Link to='/womens'><li>Women</li></Link>
-                    <Link to='/womwen2'><li>T-Shirts</li></Link>
-                    <Link to='/Accessories'><li>Accessories</li></Link>
-                    <Link to='/hats'><li>Hats</li></Link>
-                    <Link to='/kids'><li>SweatShirts</li></Link>
+    <>
+      <div className="bg-white px-4 fixed w-full z-10 shadow-sm top-0 shadow-gray-400">
+        <div className="max-w-7xl mx-auto  px-5 flex justify-between items-center">
+          <Link to="/">
+            <img src={Logo} alt="" className="md:w-16 w-16" />
+          </Link>
 
-                    <Link to='/login'><button className='bg-red-500 text-white px-4 py-1 rounded-md'>Login</button></Link>
-                    
-                </ul>
-            </nav>
-            <Link to='/cart' className='relative w-10'>
-            <ShoppingCart/> 
-            <div className='bg-red-500 w-5 absolute -top-2 right-1 flex items-center justify-center rounded-full text-white'>{getTotalCartItems()}</div>
-            </Link>
-            {/* mobile hamburger icon */}
-            {showMenu ? (
-              <HiMenuAlt1 onClick={toggleMenu} className='cursor-pointer transition-all md:hidden' size={30}/>
-            ):(
-              <HiMenuAlt3 onClick={toggleMenu} className='cursor-pointer transition-all md:hidden' size={30}/>
-            )}
+          <div class="relative hidden md:flex">
+      
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              aria-hidden="true"
+              class="absolute left-3 top-1/2 size-4 -translate-y-1/2 fill-primary dark:fill-primary-dark"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5 4a.75.75 0 0 1 .738.616l.252 1.388A1.25 1.25 0 0 0 6.996 7.01l1.388.252a.75.75 0 0 1 0 1.476l-1.388.252A1.25 1.25 0 0 0 5.99 9.996l-.252 1.388a.75.75 0 0 1-1.476 0L4.01 9.996A1.25 1.25 0 0 0 3.004 8.99l-1.388-.252a.75.75 0 0 1 0-1.476l1.388-.252A1.25 1.25 0 0 0 4.01 6.004l.252-1.388A.75.75 0 0 1 5 4ZM12 1a.75.75 0 0 1 .721.544l.195.682c.118.415.443.74.858.858l.682.195a.75.75 0 0 1 0 1.442l-.682.195a1.25 1.25 0 0 0-.858.858l-.195.682a.75.75 0 0 1-1.442 0l-.195-.682a1.25 1.25 0 0 0-.858-.858l-.682-.195a.75.75 0 0 1 0-1.442l.682-.195a1.25 1.25 0 0 0 .858-.858l.195-.682A.75.75 0 0 1 12 1ZM10 11a.75.75 0 0 1 .728.568.968.968 0 0 0 .704.704.75.75 0 0 1 0 1.456.968.968 0 0 0-.704.704.75.75 0 0 1-1.456 0 .968.968 0 0 0-.704-.704.75.75 0 0 1 0-1.456.968.968 0 0 0 .704-.704A.75.75 0 0 1 10 11Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <input
+              id="aiPromt"
+              type="text"
+              class="w-full border-outline bg-surface-alt border border-outline rounded-radius px-2 py-2 pl-10 pr-24 text-sm text-on-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-75 dark:border-outline-dark dark:bg-surface-dark-alt/50 dark:text-on-surface-dark dark:focus-visible:outline-primary-dark"
+              name="prompt"
+              placeholder="Searching ..."
+            />
+            <button
+              type="button"
+              class="absolute right-3 top-1/2 -translate-y-1/2 bg-primary rounded-radius px-2 py-1 text-xs tracking-wide text-on-primary transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:opacity-100 active:outline-offset-0 dark:bg-primary-dark dark:text-on-primary-dark dark:focus-visible:outline-primary-dark"
+            >
+              Generate
+            </button>
+          </div>
+
+          <div className="flex items-center gap-5">
+            <div className="flex items-center justify-center gap-x-2">
+              <Link to="/cart" className="relative w-10">
+                <ShoppingCart size={20} />
+                <div className="bg-red-500 size-4 text-xs absolute -top-2 right-3 flex items-center justify-center rounded-full text-white">
+                  {Number(cartCount)}
+                </div>
+              </Link>
+              <HiMenuAlt3
+                onClick={toggleMenu}
+                className="cursor-pointer transition-all"
+                size={20}
+              />
+            </div>
+          </div>
         </div>
       </div>
-      <ResponsiveMenu showMenu={showMenu} setShowMenu={setShowMenu}/>
-    </div>
-  )
-}
 
-export default Navbar
+      <div
+        className={`${
+          showMenu ? "left-0" : "-left-[50%]"
+        } fixed bottom-0 top-0 z-20 flex h-screen w-[20%] flex-col justify-between bg-gradient-to-b from-yellow-500 to-pink-500 text-white px-8 pb-6 pt-16  rounded-r-xl shadow-lg transition-all duration-300 ease-in-out`}
+      >
+        <div className="overflow-hidden overflow-y-auto pb-5">
+          {/* User Info Section */}
+          <div className="flex items-center justify-start gap-1 pt-4">
+            <FaUserCircle size={50} className="text-white" />
+            <div>
+              <h1 className="text-lg font-semibold">Hello, User</h1>
+              <h1 className="text-sm text-gray-200">Premium User</h1>
+            </div>
+          </div>
+<Sidebar isOpen={showMenu}/>
+          {/* Navigation Section */}
+          <nav className="mt-8">
+            <ul className="flex flex-col space-y-6 text-lg">
+              <Link to="/" onClick={() => setShowMenu(false)}>
+                <li className="hover:text-yellow-300 transition-colors duration-200">
+                  Home
+                </li>
+              </Link>
+              <Link to="/mens" onClick={() => setShowMenu(false)}>
+                <li className="hover:text-yellow-300 transition-colors duration-200">
+                  Men
+                </li>
+              </Link>
+              <Link to="/womens" onClick={() => setShowMenu(false)}>
+                <li className="hover:text-yellow-300 transition-colors duration-200">
+                  Women
+                </li>
+              </Link>
+              <Link to="/kids" onClick={() => setShowMenu(false)}>
+                <li className="hover:text-yellow-300 transition-colors duration-200">
+                  Sweat-wears
+                </li>
+              </Link>
+              <Link to="/womwen2" onClick={() => setShowMenu(false)}>
+                <li className="hover:text-yellow-300 transition-colors duration-200">
+                  T-Shirts
+                </li>
+              </Link>
+              <Link to="/Accessories" onClick={() => setShowMenu(false)}>
+                <li className="hover:text-yellow-300 transition-colors duration-200">
+                  Accessories
+                </li>
+              </Link>
+              <Link to="/hats" onClick={() => setShowMenu(false)}>
+                <li className="hover:text-yellow-300 transition-colors duration-200">
+                  Hats
+                </li>
+              </Link>
+              <Link to="/login" onClick={() => setShowMenu(false)}>
+                <button className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition-all duration-200">
+                  Login
+                </button>
+              </Link>
+            </ul>
+          </nav>
+        </div>
+
+        {/* Footer Section */}
+        <div className="text-center text-sm text-gray-200">
+          <h1>
+            Made with <span className="text-red-400">❤️</span> by Samuella
+          </h1>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Navbar;

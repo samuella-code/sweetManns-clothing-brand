@@ -28,6 +28,7 @@ import Item from './Item';
 
 const NewCollection = () => {
   const { new_collections } = useContext(Shopcontext);
+  
 
   return (
     <div className="bg-gradient-to-b from-gray-50 to-gray-100 py-16">

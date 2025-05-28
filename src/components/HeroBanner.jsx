@@ -3,8 +3,8 @@ import banner from '../assets/streetwear.jpg'
 
 const HeroBanner = () => {
   return (
-    <div className='bg-gray-100 lg:pt-24 pt-16'>
-      <div className='relative max-w-7xl mx-auto md:rounded-2xl pt-28 bg-cover bg-center h-[550px] md:h-[600px] ' style={{backgroundImage: `url(${banner})`, backgroundPosition:'Top'}}>
+    <div className='bg-gray-100 pt-16'>
+      <div className='relative max-w-7xl mx-auto md:rounded-br-2xl md:rounded-bl-2xl pt-28 bg-cover bg-center h-[550px] md:h-[600px] ' style={{backgroundImage: `url(${banner})`, backgroundPosition:'Top'}}>
         <div className='absolute inset-0 bg-black md:rounded-2xl bg-opacity-50 flex items-center justify-center'>
             <div className='text-center text-white px-4'>
                 <h1 className='text-3xl md:text-5xl lg:text-6xl font-bold mb-4'>Discover Your Style</h1>

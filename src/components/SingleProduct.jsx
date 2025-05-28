@@ -18,7 +18,7 @@ const SingleProduct = () => {
 
   return (
     <AppLayout>
-      <div className="max-w-7xl mx-auto mb-32 mt-32">
+      <div className="max-w-7xl mx-auto mb-32 mt-10 p-10">
         <Breadcrum product={product} />
         <ProductDisplay product={product} />
         <DescriptionBox />
