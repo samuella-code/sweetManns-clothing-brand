@@ -5,10 +5,8 @@ const Sidebar = ({ isOpen }) => {
   return (
     <>
       <div
-        id="hs-sidebar-header"
-        class={`hs-overlay  lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 ${isOpen ? 'w-64 opacity-100' : 'w-0 opacity-0'} z-50-translate-x-full transition-all duration-300 transform
+        class={`hs-overlay  lg:bottom-0 ${isOpen ? 'w-64 opacity-100' : 'w-0 opacity-0'} z-50 translate-x-full transition-all duration-300 transform
 h-full
-hidden
 fixed top-0 start-0 bottom-0 z-60
 bg-white border-e border-gray-200 d:bg-neutral-800 d:border-neutral-700`}
         role="dialog"
