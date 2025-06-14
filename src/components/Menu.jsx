@@ -1,5 +1,7 @@
 import { X } from "lucide-react";
 import Logo from "../assets/Logo1.png";
+import { Link } from "react-router-dom";
+import NavLink from "./NavLink";
 
 const Menu = ({ collapseMenuRef, menuOpen, setMenuOpen }) => {
   return (
@@ -23,46 +25,12 @@ const Menu = ({ collapseMenuRef, menuOpen, setMenuOpen }) => {
             </button>
           </li>
           {/* ...rest of your menu items... */}
-          <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 relative lg:after:absolute lg:after:bg-pink-500 lg:after:w-full lg:after:h-[3px] lg:after:block lg:after:-bottom-2 lg:after:transition-all lg:after:duration-300">
-            <a
-              href="/men"
-              className="text-slate-900 block text-sm font-semibold"
-            >
-              Men
-            </a>
-          </li>
-          <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 relative lg:hover:after:absolute lg:after:bg-pink-500 lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[3px] lg:after:block lg:after:-bottom-2 lg:after:transition-all lg:after:duration-300">
-            <a
-              href="javascript:void(0)"
-              className="text-slate-900 block text-sm font-semibold"
-            >
-              Women
-            </a>
-          </li>
-          <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 relative lg:hover:after:absolute lg:after:bg-pink-500 lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[3px] lg:after:block lg:after:-bottom-2 lg:after:transition-all lg:after:duration-300">
-            <a
-              href="javascript:void(0)"
-              className="text-slate-900 block text-sm font-semibold"
-            >
-              Kids
-            </a>
-          </li>
-          <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 relative lg:hover:after:absolute lg:after:bg-pink-500 lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[3px] lg:after:block lg:after:-bottom-2 lg:after:transition-all lg:after:duration-300">
-            <a
-              href="javascript:void(0)"
-              className="text-slate-900 block text-sm font-semibold"
-            >
-              Home & Living
-            </a>
-          </li>
-          <li className="max-lg:border-b max-lg:border-gray-300 max-lg:py-3 relative lg:hover:after:absolute lg:after:bg-pink-500 lg:after:w-0 lg:hover:after:w-full lg:hover:after:h-[3px] lg:after:block lg:after:-bottom-2 lg:after:transition-all lg:after:duration-300">
-            <a
-              href="javascript:void(0)"
-              className="text-slate-900 block text-sm font-semibold"
-            >
-              Beauty
-            </a>
-          </li>
+
+          <NavLink text="Men" link="/mens" />
+          <NavLink text="Womens" link="/womens" />
+          <NavLink text="kids" link="/kids" />
+          <NavLink text="Accessories" link="/Accessories" isActive={true}/>
+          <NavLink text="Beauty" link="Beauty" />
         </ul>
 
         {/* search */}

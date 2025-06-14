@@ -56,7 +56,7 @@ const Accessories = () => {
 
   return (
     <AppLayout>
-      <div className="md:mt-32 mt-20 max-w-8xl mx-auto">
+      <div className="max-w-8xl mx-auto">
         {/* Banner Section */}
         <div className="w-screen h-[300px] md:h-[400px] overflow-hidden rounded-b-[50px] shadow-lg">
           <img

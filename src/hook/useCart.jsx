@@ -36,6 +36,10 @@ const useCart = () => {
     });
   };
 
+  const clearCart = () => {
+    setCarts([]);
+  };
+
   const cartCount = useMemo(() => carts.length, [carts]);
 
   const getCartTotal = useMemo(() => {
@@ -50,6 +54,7 @@ const useCart = () => {
     carts,
     removeFromCart,
     getCartTotal,
+    clearCart
   };
 };
 

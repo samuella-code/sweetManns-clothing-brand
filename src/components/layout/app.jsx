@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Logo from "../../assets/Logo1.png";
 import Menu from "../Menu";
 import MiniBar from "../MiniBar";
+import Footer from "../Footer";
 
 const AppLayout = ({ children }) => {
   // Navbar menu toggle
@@ -86,6 +87,7 @@ const AppLayout = ({ children }) => {
         </div>
       </header>
       <>{children}</>
+      <Footer/>
     </>
   );
 };
