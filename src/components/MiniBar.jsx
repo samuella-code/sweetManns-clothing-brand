@@ -46,12 +46,14 @@ const MiniBar = ({
             <p className="text-sm text-slate-500 mt-1">
               To access account and manage orders
             </p>
-            <button
-              type="button"
-              className="bg-transparent border border-gray-300 hover:border-pink-500 px-4 py-2 mt-4 text-sm text-pink-500 font-semibold cursor-pointer"
-            >
-              LOGIN / SIGNUP
-            </button>
+          <button
+  type="button"
+  className="bg-transparent border border-gray-300 hover:border-pink-500 px-4 py-2 mt-4 text-sm text-pink-500 font-semibold cursor-pointer flex gap-2 justify-center items-center"
+>
+  <Link to="/Login" className="hover:underline text-pink-500">Login</Link>
+  <span>/</span>
+  <Link to="/Signup" className="hover:underline text-pink-500">Signup</Link>
+</button>
             <hr className="border-b-0 my-4 border-gray-300" />
             <ul className="space-y-1.5">
               <li>

@@ -30,7 +30,7 @@ const Menu = ({ collapseMenuRef, menuOpen, setMenuOpen }) => {
           <NavLink text="Womens" link="/womens" />
           <NavLink text="kids" link="/kids" />
           <NavLink text="Accessories" link="/Accessories" isActive={true}/>
-          <NavLink text="Beauty" link="Beauty" />
+          <NavLink text="hats" link="/hats" />
         </ul>
 
         {/* search */}
