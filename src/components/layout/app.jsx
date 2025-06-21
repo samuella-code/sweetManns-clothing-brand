@@ -87,7 +87,7 @@ const AppLayout = ({ children }) => {
         </div>
       </header>
       <>{children}</>
-      <Footer/>
+      <Footer />
     </>
   );
 };

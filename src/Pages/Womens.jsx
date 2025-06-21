@@ -3,7 +3,7 @@ import { Shopcontext } from "../Context/ShopContext";
 import Item from "../components/Item";
 import bannerVideo from "../assets/vid3.mp4";
 import AppLayout from "../components/layout/app";
-
+import ProductCard from "../components/ProductCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
@@ -64,7 +64,7 @@ const Womens = () => {
           {/* Grid for Desktop */}
           <div className="hidden lg:grid mt-6 grid-cols-1 gap-x-6 gap-y-10 px-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
             {womenProducts.map((product) => (
-              <Item key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>

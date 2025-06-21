@@ -3,13 +3,13 @@ import { Shopcontext } from "../Context/ShopContext";
 import Item from "../components/Item";
 import banner from "../assets/vid2.mp4";
 import AppLayout from "../components/layout/app";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import ProductCard from "../components/ProductCard";
 
 const Mens = () => {
   const { all_product } = useContext(Shopcontext);
@@ -62,9 +62,10 @@ const Mens = () => {
           </div>
 
           {/* Grid for Desktop */}
-          <div className="hidden lg:grid mt-6 grid-cols-1 gap-x-6 gap-y-10 px-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          <div className="hidden lg:grid mt-6 grid-cols-1 gap-x-3 gap-y-10  sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-4">
             {menProducts.map((product) => (
-              <Item key={product.id} product={product} />
+              // <Item key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} />
             ))}
           </div>
         </div>
